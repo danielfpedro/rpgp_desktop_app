@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="Home">
+<head>
+    <meta charset="utf-8">
+    <title>Electron Boilerplate</title>
+
+    <link href="./vendor/photon/css/photon.min.css" rel="stylesheet" type="text/css">
+    <link href="./stylesheets/main.css" rel="stylesheet" type="text/css">
+
+    <script src="vendor/electron_boilerplate/context_menu.js"></script>
+    <script src="vendor/electron_boilerplate/external_links.js"></script>
+
+    <script>
+    </script>
+
+</head>
+<body ng-controller="HomeController">
+    <div class="container">
+        <table class="table-striped" ng-if="files.length > 0">
+            <thead>
+                <tr>
+                    <th>
+                        Nome
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="file in files">
+                    <td>
+                        {{file}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-if="!files.length">
+            <button type="button" class="btn btn-default" ng-click="open()">Abrir Janela</button>    
+        </div>
+
+    </div>
+
+    <script src="./vendor/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
